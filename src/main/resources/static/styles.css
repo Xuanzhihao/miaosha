@@ -1,0 +1,583 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    /*	overflow: hidden;
+        overflow-y: auto;*/
+    width: 100%;
+    height: 100%;
+}
+
+fieldset {
+    border-radius: 3px;
+    border: 1px solid #666;
+    padding-right: .2em;
+}
+
+.form-Wrapper {
+    padding: 10px;
+}
+body.qrcode-student {
+    background: url('stu_qrcode_bg.png') no-repeat;
+    background-size: 100% 100%;
+    display:flex;
+    display: -webkit-flex;
+    flex-direction:column;
+}
+.qrcode-body {
+    background: url('../img/teacher_qrcode_bg.png') no-repeat;
+    background-size: 100% 100%;
+    /*min-height: 480px;*/
+    display:flex;
+    display: -webkit-flex;
+    flex-direction:column;
+}
+.qrcode-body .content {
+    flex: 1 0 auto;
+}
+.login-body
+{
+    /*	background-color: #68a0c3;*/
+    background: url('../img/bg_sdyzy.jpg') no-repeat;
+    background-size: 100% 100%;
+    /*min-height: 480px;*/
+
+    display:flex;
+    display: -webkit-flex;
+    flex-direction:column;
+
+}
+.login-box-msg {
+    display: block;
+    min-height: 30px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.login-body .login-form {
+    margin-top: 70px;
+    flex: 1 0 auto;
+}
+
+fieldset + fieldset {
+    margin-top: 40px;
+}
+
+@media (min-width: 800px) {
+    .form-Wrapper {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+}
+
+.form-Intro h1 {
+    margin-bottom: 0;
+}
+
+.form-Intro h2 {
+    margin-top: 5px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.form-Intro .title {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/*We want reverse order to sort the label being after the input*/
+.form-Input_Wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+.form-Input_Wrapper label {
+    /*	color: 888;*/
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.form-Input_Wrapper.health-Input_Wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: initial;
+    -ms-flex-direction: initial;
+    flex-direction: initial;
+    align-items: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+}
+.form-Input_Wrapper.health-Input_Wrapper label{
+    margin-right: 10px;
+}
+
+/*.health-form input {
+	margin-left: 7px;
+}*/
+
+.health-form input.age {
+    width: 50px;
+    margin-left: 7px;
+}
+.health-form input.nationality {
+    width: 90px;
+    margin-left: 7px;
+}
+.health-form input.birthDate {
+    width: 105px;
+    margin-left: 7px;
+}
+.health-form input.IDNo {
+    width: 240px;
+    margin-left: 7px;
+}
+
+.health-form input.pickDate {
+    margin-left: 7px;
+}
+
+.submit-form input.pickDate {
+    bottom: 5px;
+}
+
+input.temp-input {
+    width: 50px;
+    margin-left: 7px;
+}
+
+/*Note we are using a reverse order for flex-direction to make labels appear before the input*/
+@media (min-width: 800px) {
+    .form-Input_Wrapper {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .form-Input_Wrapper input:not([type="range"]):not([type="color"]) {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 70%;
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+    }
+    .form-Input_Wrapper label {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 30%;
+        -ms-flex: 1 0 30%;
+        flex: 1 0 30%;
+        margin-bottom: 0;
+    }
+    textarea {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+        flex: 1 0 50%;
+    }
+}
+
+.form-Input_Wrapper + .form-Input_Wrapper {
+    margin-top: 10px;
+}
+
+legend {
+    font-size: 1.3em;
+    padding: 3px 6px;
+    color: #fff;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+textarea.med-obsv-reason {
+    min-height: 9em;
+    min-width: 260px;
+    border: 1px solid #111111;
+}
+textarea.below-case-desc {
+    min-height: 4em;
+    min-width: 260px;
+    border: 1px solid #111111;
+}
+
+textarea.health-desc {
+    min-height: 80px;
+    min-width: 260px;
+    margin-right: 5px;
+    border: 1px solid #111;
+}
+.question-label {
+    text-decoration: underline;
+}
+
+input:not([type="range"]),
+textarea {
+    min-height: 30px;
+    padding: 2px;
+    font-size: 15px;
+    /*	border: 1px solid #ebebeb;
+        outline: none;
+        border-radius: 0;*/
+    position: relative;
+}
+
+input:not([type="range"]):focus,
+textarea:focus {
+    background-position: 0 0, 0 0;
+}
+
+/*This is the color of placeholder text*/
+input::-webkit-input-placeholder {
+    color: #999;
+}
+input::-moz-placeholder {
+    color: #999;
+}
+input:-ms-input-placeholder {
+    color: #999;
+}
+input:placeholder-shown {
+    color: #999;
+}
+
+/*This changes the color of placeholder text when the input gets focused*/
+input:not([type="range"]):focus::-webkit-input-placeholder {
+    color: #555;
+}
+input:not([type="range"]):focus::-moz-placeholder {
+    color: #555;
+}
+input:not([type="range"]):focus:-ms-input-placeholder {
+    color: #555;
+}
+input:not([type="range"]):focus:placeholder-shown {
+    color: #555;
+}
+
+.temperature {
+    width: 3em;
+}
+
+/*The About the film section legend and inputs*/
+.form-About_Wrapper legend {
+    background-color: #cc3232;
+}
+.form-About_Wrapper input:not([type="range"]) {
+    -webkit-box-shadow: inset 0 -3px 0 #cc3232;
+    box-shadow: inset 0 -3px 0 #cc3232;
+}
+
+.form-What_Wrapper legend {
+    background-color: #739327;
+}
+.form-What_Wrapper input:not([type="range"]) {
+    -webkit-box-shadow: inset 0 -3px 0 #739327;
+    box-shadow: inset 0 -3px 0 #739327;
+}
+
+.form-You_Wrapper legend {
+    background-color: #236A7E;
+}
+.form-You_Wrapper input:not([type="range"]) {
+    /*	-webkit-box-shadow: inset 0 -3px 0 #236a7e;
+                box-shadow: inset 0 -3px 0 #236a7e;*/
+    border: 1px solid #666;
+}
+.form-You_Wrapper input[type="radio"] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    bottom: -7px;
+    /*	-webkit-transition: none;
+                transition: none;
+        background: #ffffff;*/
+}
+
+/*Now we want some basic styling to indicate that fields are required, valid or invalid*/
+input:required + label:after {
+    content: "*";
+    font-size: 2.1em;
+    position: relative;
+    top: 6px;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-left: .2ch;
+    -webkit-transition: color, 1s;
+    transition: color, 1s;
+}
+
+input:required + label:after {
+    color: red;
+}
+
+/*input:required:valid + label:after {
+	color: green;
+}*/
+
+.back {
+    background-color: #739328;
+    color: #fff;
+}
+
+.front {
+    border: 1px solid #739328;
+}
+
+.text-red {
+    color: red;
+}
+.underlined-text {
+    text-decoration: underline;
+    margin-left: 7px;
+}
+
+.login-input {
+    /*background-color: #d5c2be;*/
+    background: transparent;
+    -webkit-border-radius: .3125em;
+    border-radius: .3125em;
+}
+
+.login-btn-container {
+    margin-top: 0;
+}
+.login-btn-container button {
+    background: transparent;
+}
+
+/** button */
+.button-container {
+    text-align:center;
+}
+.footer-date-container {
+    margin-top: 2em;
+    text-align: right;
+}
+.ui-btn {
+    line-height: 1.3;
+    font-weight: 700;
+    text-decoration: none!important;
+    font-size: 1rem;
+    margin: .5em 0;
+    padding: .7em 1em;
+    display:inline-block;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f6f6f6;
+    border: 2px solid #6c8834;
+    color: #333;
+    text-shadow: 0 1px 0 #f3f3f3;
+}
+.ui-corner-all {
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: .3125em;
+    border-radius: .3125em;
+}
+button.ui-btn {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 70%;
+}
+.ui-btn-inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: .625em;
+}
+/** footer */
+.zjgsu-footer {
+    border-top: 1px solid #236a7e;
+    border-bottom: 1px solid #236a7e;
+    background-color: #fff;
+    -moz-opacity: 0.7;
+    -webkit-opacity: 0.7;
+    opacity: 0.7;
+    flex-shrink: 0;
+    /*   display: flex;*/
+}
+.zjgsu-footer.ui-footer {
+    bottom: 0;
+    padding-bottom: 0;
+}
+.zjgsu-footer.login-footer {
+    /*	position: absolute;
+        width: 100%;
+        bottom: 0;*/
+    display: block;
+}
+.ui-footer-fixed {
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+.ui-footer {
+    border-width: 1px 0;
+    position: relative;
+}
+.zjgsu-footer p:first-child {
+    margin: .5em 1em .5em;
+}
+.zjgsu-footer p{
+    font-size: .8em;
+    color: #779e29;
+    font-weight: 300;
+    margin: 0 1em .5em;
+}
+.zjgsu-footer p a {
+    color: #779e29;
+}
+
+/** stat info bar */
+.stat-row {
+    display: block;
+    width: 100%;
+    margin: 0 .3em .3em .3em;
+}
+.stat-info-container {
+    display: inline-block;
+    width: 80%;
+}
+.stat-info-percent {
+    display: inline-block;
+    padding-left: .3em;
+    position: relative;
+    top: 1.15em;
+}
+
+.horiz-center-div {
+    width: 100%;
+    margin: 3px auto;
+    text-align: center;
+}
+.content-div {
+    width: 210px;
+    height: 210px;
+    margin: 0 auto;
+    position: relative;
+}
+.remaining-time {
+    margin-left: 10px;
+}
+#canvas {
+    margin: 5px auto;
+}
+.remaining-container {
+    color: #ff9a00;
+}
+.content-animate:before, .content-animate:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
+    #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: 210px;
+    height: 210px;
+    z-index: -1;
+    animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.content-div:after {
+    filter: blur(5px);
+}
+
+#changePsswd-btn {
+    width: 50%;
+}
+.changePsswd-form label{
+    text-align: center;
+}
+.changePsswd-form label span {
+    width: 90px;
+    display: inline-block;
+}
+.changePsswd-form label input {
+    width: 140px;
+    display: inline-block;
+}
+
+#signature {
+    border: 1px solid #000;
+}
+
+.signature-btn {
+    line-height: 1;
+    font-weight: 500;
+    text-decoration: none!important;
+    font-size: .5rem;
+    padding: .7em 1em;
+    display:inline-block;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #f6f6f6;
+    border: 2px solid #6c8834;
+    color: #333;
+    text-shadow: 0 1px 0 #f3f3f3;
+    -webkit-border-radius: .3125em;
+    border-radius: .3125em;
+}
+.text-hz-qrcode {
+    font-size: .8em;
+}
+.qrcode-body .hz-qrcode-div {
+    margin: 0;
+
+}
+.qrcode-body .hz-qrcode-div label {
+    background-color: #fff;
+    opacity: 0.7;
+}
